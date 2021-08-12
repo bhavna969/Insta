@@ -6,7 +6,10 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
+import {connect} from 'react-redux';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
+import {showSettingsComponent} from '../../store/actions/ShowBottomDrawerAction';
 
 import * as Colors from '../../utils/Colors';
 import STYLES from '../../utils/Styles';
@@ -16,93 +19,69 @@ const Icon = MaterialCommunityIcons;
 
 class Set extends React.Component {
   render() {
-    const {navigation} = this.props;
+    const {navigation, showSettingsComponent} = this.props;
     return (
-      <SafeAreaView style={[styles.main]}>
+      <SafeAreaView style={[STYLES.accountComponentMain]}>
         <TouchableOpacity
-          style={[styles.button, {marginTop: responsiveHeight(2)}]}>
+          style={[STYLES.accountComponentButton]}
+          onPress={() => {
+            showSettingsComponent(false);
+            navigation.navigate('Settings');
+          }}>
           <Icon name="cog" size={responsiveWidth(7)} color={Colors.black} />
-          <Text style={[styles.text]}>Settings</Text>
+          <Text style={[STYLES.accountComponentText]}>Settings</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.button]}>
+        <TouchableOpacity style={[STYLES.accountComponentButton]}>
           <Icon
             name="clock-time-seven"
             size={responsiveWidth(7)}
             color={Colors.black}
           />
-          <Text style={[styles.text]}>Archive</Text>
+          <Text style={[STYLES.accountComponentText]}>Archive</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.button]}>
+        <TouchableOpacity style={[STYLES.accountComponentButton]}>
           <Icon
             name="clock-time-seven-outline"
             size={responsiveWidth(7)}
             color={Colors.black}
           />
-          <Text style={[styles.text]}>Your Activity</Text>
+          <Text style={[STYLES.accountComponentText]}>Your Activity</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.button]}>
+        <TouchableOpacity style={[STYLES.accountComponentButton]}>
           <Icon
             name="qrcode-scan"
             size={responsiveWidth(7)}
             color={Colors.black}
           />
-          <Text style={[styles.text]}>QR Code</Text>
+          <Text style={[STYLES.accountComponentText]}>QR Code</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.button]}>
+        <TouchableOpacity style={[STYLES.accountComponentButton]}>
           <Icon
             name="bookmark-outline"
             size={responsiveWidth(7)}
             color={Colors.black}
           />
-          <Text style={[styles.text]}>Saved</Text>
+          <Text style={[STYLES.accountComponentText]}>Saved</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.button]}>
+        <TouchableOpacity style={[STYLES.accountComponentButton]}>
           <Icon
             name="format-list-bulleted-square"
             size={responsiveWidth(7)}
             color={Colors.black}
           />
-          <Text style={[styles.text]}>Close Friends</Text>
+          <Text style={[STYLES.accountComponentText]}>Close Friends</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.button]}>
+        <TouchableOpacity style={[STYLES.accountComponentButton]}>
           <Icon name="account" size={responsiveWidth(7)} color={Colors.black} />
-          <Text style={[styles.text]}>"Covid-19 Information Center</Text>
+          <Text style={[STYLES.accountComponentText]}>
+            "Covid-19 Information Center
+          </Text>
         </TouchableOpacity>
       </SafeAreaView>
     );
   }
 }
 
-export default Set;
+export default connect(null, {showSettingsComponent})(Set);
 
-const styles = StyleSheet.create({
-  main: {
-    // borderWidth: 1,
-    backgroundColor: Colors.white,
-    position: 'absolute',
-    backfaceVisibility: 'visible',
-    bottom: 0,
-  },
-  button: {
-    height: responsiveHeight(7),
-    flexDirection: 'row',
-    paddingBottom: responsiveWidth(4),
-    marginLeft: responsiveWidth(3),
-  },
-  heading: {
-    paddingBottom: responsiveWidth(2),
-    textAlign: 'center',
-    fontSize: responsiveWidth(4),
-  },
-  text: {
-    width: responsiveWidth(85),
-    borderBottomWidth: 1,
-    borderColor: Colors.grey_light_0,
-    fontSize: responsiveWidth(4),
-    marginLeft: responsiveWidth(3),
-  },
-  icon: {
-    width: responsiveWidth(6),
-    height: responsiveWidth(6),
-  },
-});
+const styles = StyleSheet.create({});

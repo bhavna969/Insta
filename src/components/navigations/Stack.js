@@ -11,6 +11,7 @@ import EditDetails from '../../screens/EditDetails';
 import Search from '../../screens/Search';
 import Messenger from '../../screens/Messenger';
 import Requests from '../../screens/Requests';
+import Settings from '../../screens/Settings';
 
 const Stack = createStackNavigator();
 
@@ -46,6 +47,11 @@ export default function MyStack() {
         <Stack.Screen
           name="Account"
           component={Account}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Settings"
+          component={Settings}
           options={{headerShown: false}}
         />
         <Stack.Screen

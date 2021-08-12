@@ -25,7 +25,7 @@ class Requests extends React.Component {
           </TouchableOpacity>
           <Text style={[styles.heading]}>Message Requests</Text>
         </View>
-        <Text style={[styles.infoText]}>
+        <Text style={[STYLES.infoText]}>
           Requests aren't marked seen until you accept them
         </Text>
         <View style={[styles.body]}>
@@ -70,13 +70,6 @@ const styles = StyleSheet.create({
     width: responsiveWidth(80),
     fontSize: responsiveWidth(5),
     fontWeight: '600',
-  },
-  infoText: {
-    textAlign: 'center',
-    padding: responsiveWidth(2),
-    color: Colors.grey_meduim_1,
-    fontWeight: '100',
-    fontSize: responsiveWidth(3),
   },
   body: {
     backgroundColor: Colors.white,

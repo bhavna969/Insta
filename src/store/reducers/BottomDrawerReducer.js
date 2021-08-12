@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const INITIAL_STATE = {
   isPressedAdd: false,
   isPressedSetting: false,
+  isPressedProfile: false,
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -21,6 +22,12 @@ export default (state = INITIAL_STATE, action) => {
         ...INITIAL_STATE,
         isPressedAdd: false,
         isPressedSetting: action.payload,
+      };
+    case types.SHOW_PROFILE_SELECTOR:
+      return {
+        ...state,
+        ...INITIAL_STATE,
+        isPressedProfile: action.payload,
       };
     default:
       return state;

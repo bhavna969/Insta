@@ -18,21 +18,38 @@ import STYLES from '../utils/Styles';
 import {responsiveHeight, responsiveWidth} from '../utils/Responsive';
 import Header from '../components/Header';
 
-import {editProfile} from '../store/actions/EditAction';
+import {editProfile, showProfileSelector} from '../store/actions';
+import ProfileImage from '../components/accountComponents/ProfileImage';
 
 const Icon = MaterialCommunityIcons;
 
 class EditProfile extends React.Component {
   render() {
-    const {navigation, editProfile, text, array} = this.props;
+    const {
+      navigation,
+      editProfile,
+      image,
+      array,
+      isPressed,
+      showProfileSelector,
+    } = this.props;
     return (
       <SafeAreaView style={[styles.main]}>
         <Header title="Edit Profile" navigation={navigation} edit />
-        <Image
-          style={[STYLES.profilePic, {alignSelf: 'center', marginLeft: 0}]}
-          source={require('../assets/images/nullImage.png')}
-        />
-        <TouchableOpacity>
+
+        {image ? (
+          <Image
+            style={[STYLES.profilePic, {alignSelf: 'center', marginLeft: 0}]}
+            source={{uri: image.path}}
+          />
+        ) : (
+          <Image
+            style={[STYLES.profilePic, {alignSelf: 'center', marginLeft: 0}]}
+            source={require('../assets/images/nullImage.png')}
+          />
+        )}
+
+        <TouchableOpacity onPress={() => showProfileSelector(!isPressed)}>
           <Text style={[styles.changePicText]}>Change Profile Photo</Text>
         </TouchableOpacity>
         <View style={[styles.container]}>
@@ -60,6 +77,7 @@ class EditProfile extends React.Component {
         <TouchableOpacity>
           <Text style={[styles.bottom]}>Personal Infromation Setting</Text>
         </TouchableOpacity>
+        {isPressed ? <ProfileImage /> : null}
       </SafeAreaView>
     );
   }
@@ -68,9 +86,15 @@ class EditProfile extends React.Component {
 const mapStateToProps = state => {
   return {
     array: state.EditReducer.array,
+    image: state.SetImageReducer.profilePicture,
+    isPressed: state.BottomDrawerReducer.isPressedProfile,
   };
 };
-export default connect(mapStateToProps, {editProfile})(EditProfile);
+
+export default connect(mapStateToProps, {
+  editProfile,
+  showProfileSelector,
+})(EditProfile);
 
 const styles = StyleSheet.create({
   main: {
@@ -94,12 +118,12 @@ const styles = StyleSheet.create({
   changePicText: {
     padding: responsiveWidth(2),
     textAlign: 'center',
-    color: Colors.blue_medium_5,
+    color: Colors.blue_medium_1,
     fontSize: responsiveWidth(3.8),
   },
   bottom: {
     padding: responsiveWidth(3),
-    color: Colors.blue_medium_5,
+    color: Colors.blue_medium_1,
     fontSize: responsiveWidth(4),
     borderTopWidth: 1,
     borderBottomWidth: 1,

@@ -18,26 +18,30 @@ const Icon = MaterialCommunityIcons;
 
 class Top extends React.Component {
   render() {
-    const {navigation, array} = this.props;
+    const {navigation, array, image} = this.props;
     return (
-      <View style={[styles.main]}>
+      <View style={[STYLES.main]}>
         <View style={[styles.top]}>
-          <Image
-            style={[STYLES.profilePic]}
-            source={require('../../assets/images/nullImage.png')}
-          />
+          {image ? (
+            <Image style={[STYLES.profilePic]} source={{uri: image.path}} />
+          ) : (
+            <Image
+              style={[STYLES.profilePic]}
+              source={require('../../assets/images/nullImage.png')}
+            />
+          )}
           <View style={[styles.topRight]}>
-            <Pressable>
+            <Pressable style={styles.box}>
               <Text style={[styles.count]}>41</Text>
-              <Text>Posts</Text>
+              <Text style={{textAlign: 'center'}}>Posts</Text>
             </Pressable>
-            <Pressable>
+            <Pressable style={styles.box}>
               <Text style={[styles.count]}>200</Text>
-              <Text>Followers</Text>
+              <Text style={{textAlign: 'center'}}>Followers</Text>
             </Pressable>
-            <Pressable>
+            <Pressable style={styles.box}>
               <Text style={[styles.count]}>190</Text>
-              <Text>Following</Text>
+              <Text style={{textAlign: 'center'}}>Following</Text>
             </Pressable>
           </View>
         </View>
@@ -58,15 +62,12 @@ class Top extends React.Component {
 const mapStateToProps = state => {
   return {
     array: state.EditReducer.array,
+    image: state.SetImageReducer.profilePicture,
   };
 };
 export default connect(mapStateToProps, null)(Top);
 
 const styles = StyleSheet.create({
-  main: {
-    // flex: 1,
-    backgroundColor: Colors.white,
-  },
   top: {
     flexDirection: 'row',
   },
@@ -74,9 +75,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'center',
-    // borderWidth: 1,
     width: responsiveWidth(70),
+    height: responsiveHeight(10),
     marginLeft: responsiveWidth(5),
+  },
+  box: {
+    flex: 1,
+    height: responsiveHeight(10),
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   count: {
     fontWeight: 'bold',
@@ -85,7 +92,6 @@ const styles = StyleSheet.create({
   },
   text: {
     marginLeft: responsiveWidth(2),
-    // borderWidth: 1,
     padding: responsiveWidth(2),
     fontSize: responsiveWidth(3.8),
     fontWeight: '600',

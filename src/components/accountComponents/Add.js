@@ -18,51 +18,48 @@ class Add extends React.Component {
   render() {
     const {navigation} = this.props;
     return (
-      <SafeAreaView style={[styles.main]}>
-        <Text style={[styles.heading, {marginTop: responsiveHeight(3)}]}>
-          Create New
-        </Text>
-        <TouchableOpacity style={[styles.button]} onPress={() => alert('hi')}>
+      <SafeAreaView style={[STYLES.accountComponentMain]}>
+        <Text style={[STYLES.accountComponentHeading]}>Create New</Text>
+        <TouchableOpacity style={[STYLES.accountComponentButton]}>
           <Icon name="grid" size={responsiveWidth(7)} color={Colors.black} />
-          <Text style={[styles.text]}>Feed Post</Text>
+          <Text style={[STYLES.accountComponentText]}>Feed Post</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.button]}>
+        <TouchableOpacity style={[STYLES.accountComponentButton]}>
           <Image
-            style={[styles.icon]}
+            style={[STYLES.accountComponentIcon]}
             source={require('../../assets/images/reels_Icon.png')}
           />
-          <Text style={[styles.text]}>Reel</Text>
+          <Text style={[STYLES.accountComponentText]}>Reel</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.button]}>
+        <TouchableOpacity style={[STYLES.accountComponentButton]}>
           <Icon
             name="circle-outline"
             size={responsiveWidth(7)}
             color={Colors.black}
           />
-          <Text style={[styles.text]}>Story</Text>
+          <Text style={[STYLES.accountComponentText]}>Story</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.button]}>
+        <TouchableOpacity style={[STYLES.accountComponentButton]}>
           <Icon
             name="heart-circle-outline"
             size={responsiveWidth(7)}
             color={Colors.black}
           />
-          <Text style={[styles.text]}>Story Highlight</Text>
+          <Text style={[STYLES.accountComponentText]}>Story Highlight</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={[styles.button]}>
+        <TouchableOpacity style={[STYLES.accountComponentButton]}>
           <Image
-            style={[styles.icon, {height: responsiveWidth(7)}]}
+            style={[STYLES.accountComponentIcon, {height: responsiveWidth(7)}]}
             source={require('../../assets/images/IGTV_Icon.png')}
           />
-          <Text style={[styles.text]}>IGTV Video</Text>
+          <Text style={[STYLES.accountComponentText]}>IGTV Video</Text>
         </TouchableOpacity>
-        <TouchableOpacity
-          style={[styles.button, {marginBottom: responsiveHeight(2)}]}>
+        <TouchableOpacity style={[STYLES.accountComponentButton]}>
           <Image
-            style={[styles.icon]}
+            style={[STYLES.accountComponentIcon]}
             source={require('../../assets/images/guide.png')}
           />
-          <Text style={[styles.text]}>Guide</Text>
+          <Text style={[STYLES.accountComponentText]}>Guide</Text>
         </TouchableOpacity>
       </SafeAreaView>
     );
@@ -71,34 +68,4 @@ class Add extends React.Component {
 
 export default Add;
 
-const styles = StyleSheet.create({
-  main: {
-    // borderWidth: 1,
-    backgroundColor: Colors.white,
-    position: 'absolute',
-    backfaceVisibility: 'visible',
-    bottom: 0,
-  },
-  button: {
-    height: responsiveHeight(7),
-    flexDirection: 'row',
-    paddingBottom: responsiveWidth(4),
-    marginLeft: responsiveWidth(3),
-  },
-  heading: {
-    paddingBottom: responsiveWidth(2),
-    textAlign: 'center',
-    fontSize: responsiveWidth(4),
-  },
-  text: {
-    width: responsiveWidth(85),
-    borderBottomWidth: 1,
-    borderColor: Colors.grey_light_0,
-    fontSize: responsiveWidth(4),
-    marginLeft: responsiveWidth(3),
-  },
-  icon: {
-    width: responsiveWidth(6),
-    height: responsiveWidth(6),
-  },
-});
+const styles = StyleSheet.create({});

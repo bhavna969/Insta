@@ -20,7 +20,15 @@ class Chats extends React.Component {
   render() {
     const {navigation} = this.props;
     return (
-      <View>
+      <View style={[STYLES.main]}>
+        <TouchableOpacity style={[STYLES.searchBar]}>
+          <Icon
+            name="magnify"
+            color={Colors.black}
+            size={responsiveHeight(4)}
+          />
+          <Text style={[STYLES.searchText]}>Search</Text>
+        </TouchableOpacity>
         <Text>chats</Text>
       </View>
     );

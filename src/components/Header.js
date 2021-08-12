@@ -30,7 +30,7 @@ class Header extends React.Component {
             navigation.goBack();
             this.saveDetails();
           }}>
-          <Icon name="check" size={35} color={Colors.blue_medium_5} />
+          <Icon name="check" size={35} color={Colors.blue_medium_1} />
         </Pressable>
       </SafeAreaView>
     );

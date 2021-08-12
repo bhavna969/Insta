@@ -17,16 +17,10 @@ import {responsiveHeight, responsiveWidth} from '../utils/Responsive';
 
 const Icon = MaterialCommunityIcons;
 
-export default Search = ({navigation}) => {
+export default Reels = ({navigation}) => {
   return (
     <SafeAreaView style={[STYLES.main]}>
-      <TouchableOpacity
-        style={[STYLES.searchBar]}
-        onPress={() => navigation.navigate('SearchTab')}>
-        <Icon name="magnify" color={Colors.black} size={responsiveHeight(4)} />
-        <Text style={[STYLES.searchText]}>Search</Text>
-      </TouchableOpacity>
-      <Text>'Account'</Text>
+      <Text>Reels</Text>
     </SafeAreaView>
   );
 };

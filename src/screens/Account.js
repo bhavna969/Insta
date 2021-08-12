@@ -30,14 +30,19 @@ class Account extends React.Component {
         <Header navigation={navigation} />
         <ScrollView>
           <Top navigation={navigation} />
-          <TouchableOpacity
-            style={[styles.editButton]}
-            onPress={() => navigation.navigate('EditProfile')}>
-            <Text style={[styles.editText]}>Edit Profile</Text>
-          </TouchableOpacity>
+          <View style={[styles.edit]}>
+            <TouchableOpacity
+              style={[styles.editButton, styles.button]}
+              onPress={() => navigation.navigate('EditProfile')}>
+              <Text style={[styles.editText]}>Edit Profile</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={[styles.suggestButton, styles.button]}>
+              <Icon name="chevron-down" size={responsiveWidth(6)} />
+            </TouchableOpacity>
+          </View>
         </ScrollView>
-        {isPressedAdd ? <Add /> : null}
-        {isPressedSetting ? <Set /> : null}
+        {isPressedAdd ? <Add navigation={navigation} /> : null}
+        {isPressedSetting ? <Set navigation={navigation} /> : null}
       </SafeAreaView>
     );
   }
@@ -56,13 +61,22 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.white,
   },
-  editButton: {
+  edit: {
+    flexDirection: 'row',
+  },
+  button: {
     borderWidth: 1,
-    width: responsiveWidth(90),
     borderColor: Colors.grey_meduim_1,
     alignItems: 'center',
+  },
+  editButton: {
+    width: responsiveWidth(88),
     marginLeft: responsiveWidth(2),
     borderRadius: responsiveWidth(2),
+  },
+  suggestButton: {
+    marginLeft: responsiveWidth(1),
+    borderRadius: responsiveWidth(1.5),
   },
   editText: {
     padding: responsiveWidth(1.5),

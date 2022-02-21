@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
   text: {
     marginLeft: responsiveWidth(2),
     padding: responsiveWidth(2),
+    paddingTop: 0,
     fontSize: responsiveWidth(3.8),
     fontWeight: '600',
   },

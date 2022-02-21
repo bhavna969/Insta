@@ -7,12 +7,10 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import * as Colors from '../utils/Colors';
 import STYLES from '../utils/Styles';
-
 import {responsiveHeight, responsiveWidth} from '../utils/Responsive';
 
 const Icon = MaterialCommunityIcons;
@@ -87,10 +85,12 @@ export default Settings = ({navigation}) => {
         <Text style={[styles.text, {marginTop: responsiveHeight(2)}]}>
           Logins
         </Text>
-        <TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate('MainPage')}>
           <Text style={[styles.textBottom]}>Add Account</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate('LogInAfter')}>
           <Text style={[styles.textBottom]}>Log Out</Text>
         </TouchableOpacity>
       </ScrollView>

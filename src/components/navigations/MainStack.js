@@ -2,6 +2,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
+import MyStack from './Stack';
 import MyTabs from './Tab';
 import SearchTab from './SearchTab';
 
@@ -19,10 +20,30 @@ import LogInAfter from '../../screens/LogInAfter';
 
 const Stack = createStackNavigator();
 
-export default function MyStack() {
+export default function MainStack() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen
+          name="MainPage"
+          component={MainPage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="LogIn"
+          component={LogIn}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="SignIn"
+          component={SignIn}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="MyStack"
+          component={MyStack}
+          options={{headerShown: false}}
+        />
         <Stack.Screen
           name="MyTabs"
           component={MyTabs}
@@ -66,21 +87,6 @@ export default function MyStack() {
         <Stack.Screen
           name="EditDetails"
           component={EditDetails}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="MainPage"
-          component={MainPage}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="LogIn"
-          component={LogIn}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="SignIn"
-          component={SignIn}
           options={{headerShown: false}}
         />
         <Stack.Screen

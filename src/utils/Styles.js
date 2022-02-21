@@ -80,5 +80,16 @@ const STYLES = StyleSheet.create({
     fontSize: responsiveWidth(4),
     marginLeft: responsiveWidth(4),
   },
+  //input
+  input: {
+    borderWidth: 1,
+    borderColor: Colors.grey_light_0,
+    backgroundColor: Colors.white_dark,
+    borderRadius: responsiveWidth(3),
+    width: responsiveWidth(90),
+    alignSelf: 'center',
+    marginVertical: responsiveHeight(1),
+    paddingLeft: responsiveWidth(5),
+  },
 });
 export default STYLES;

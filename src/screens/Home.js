@@ -71,7 +71,7 @@ class Home extends React.Component {
             <Icon
               name="plus-box-outline"
               color={Colors.black}
-              size={responsiveHeight(4.5)}
+              size={responsiveHeight(4)}
             />
           </TouchableOpacity>
           <TouchableOpacity
@@ -80,11 +80,11 @@ class Home extends React.Component {
             <Icon
               name="facebook-messenger"
               color="black"
-              size={responsiveHeight(4.5)}
+              size={responsiveHeight(4)}
             />
           </TouchableOpacity>
         </View>
-        <Text>'Home'</Text>
+        <Text>Home</Text>
       </SafeAreaView>
     );
   }

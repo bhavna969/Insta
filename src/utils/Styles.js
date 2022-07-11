@@ -48,13 +48,12 @@ const STYLES = StyleSheet.create({
 
   //Acccount Components STyles
   accountComponentMain: {
-    borderWidth: 1,
     borderColor: Colors.grey_meduim_1,
     backgroundColor: Colors.white_dark,
     position: 'absolute',
     backfaceVisibility: 'visible',
     bottom: 0,
-    paddingTop: responsiveHeight(3),
+    paddingTop: responsiveHeight(10),
     borderTopLeftRadius: responsiveWidth(10),
     borderTopRightRadius: responsiveWidth(10),
   },

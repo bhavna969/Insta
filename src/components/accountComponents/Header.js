@@ -37,7 +37,7 @@ class Header extends React.Component {
           <Icon
             name="plus-box-outline"
             color={Colors.black}
-            size={responsiveHeight(4.5)}
+            size={responsiveHeight(4)}
           />
         </TouchableOpacity>
         <TouchableOpacity
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
     paddingRight: responsiveWidth(3),
   },
   drawerIcon: {
-    height: responsiveHeight(6),
-    width: responsiveWidth(7),
+    height: responsiveHeight(4),
+    width: responsiveWidth(6),
   },
 });

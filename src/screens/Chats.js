@@ -1,24 +1,15 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import {connect} from 'react-redux';
+import {Text, TouchableOpacity, View} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import * as Colors from '../utils/Colors';
 import STYLES from '../utils/Styles';
-import {responsiveHeight, responsiveWidth} from '../utils/Responsive';
-import MessengerHeader from '../components/MessengerHeader';
+import {responsiveHeight} from '../utils/Responsive';
 
 const Icon = MaterialCommunityIcons;
 
 class Chats extends React.Component {
   render() {
-    const {navigation} = this.props;
     return (
       <View style={[STYLES.main]}>
         <TouchableOpacity style={[STYLES.searchBar]}>
@@ -36,5 +27,3 @@ class Chats extends React.Component {
 }
 
 export default Chats;
-
-const styles = StyleSheet.create({});

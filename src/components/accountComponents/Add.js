@@ -1,22 +1,15 @@
 import React from 'react';
-import {
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
+import {Image, SafeAreaView, Text, TouchableOpacity} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import * as Colors from '../../utils/Colors';
 import STYLES from '../../utils/Styles';
-import {responsiveHeight, responsiveWidth} from '../../utils/Responsive';
+import {responsiveWidth} from '../../utils/Responsive';
 
 const Icon = MaterialCommunityIcons;
 
 class Add extends React.Component {
   render() {
-    const {navigation} = this.props;
     return (
       <SafeAreaView style={[STYLES.accountComponentMain]}>
         <Text style={[STYLES.accountComponentHeading]}>Create New</Text>
@@ -67,5 +60,3 @@ class Add extends React.Component {
 }
 
 export default Add;
-
-const styles = StyleSheet.create({});

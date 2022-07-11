@@ -1,13 +1,10 @@
 import React from 'react';
 import {Pressable, SafeAreaView, StyleSheet, Text} from 'react-native';
 import {connect} from 'react-redux';
-
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
 import * as Colors from '../utils/Colors';
-import STYLES from '../utils/Styles';
 
-import {responsiveHeight, responsiveWidth} from '../utils/Responsive';
+import {responsiveWidth} from '../utils/Responsive';
 import {saveChanges} from '../store/actions/EditAction';
 
 const Icon = MaterialCommunityIcons;

@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Image,
   SafeAreaView,
   ScrollView,
   StyleSheet,
@@ -12,8 +11,7 @@ import {connect} from 'react-redux';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import * as Colors from '../utils/Colors';
-import STYLES from '../utils/Styles';
-import {responsiveHeight, responsiveWidth} from '../utils/Responsive';
+import {responsiveWidth} from '../utils/Responsive';
 
 import Top from '../components/accountComponents/Top';
 import Header from '../components/accountComponents/Header';

@@ -1,28 +1,11 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {SafeAreaView, Text} from 'react-native';
+import styles from './styles';
 
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
-import * as Colors from '../utils/Colors';
-import STYLES from '../utils/Styles';
-
-import {responsiveHeight, responsiveWidth} from '../utils/Responsive';
-
-const Icon = MaterialCommunityIcons;
-
-export default Reels = ({navigation}) => {
+export default Reels = () => {
   return (
-    <SafeAreaView style={[STYLES.main]}>
+    <SafeAreaView style={styles.main}>
       <Text>Reels</Text>
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({});

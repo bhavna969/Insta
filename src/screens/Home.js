@@ -12,7 +12,7 @@ import {setDetails, SetImage} from '../store/actions';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import ImagePicker from 'react-native-image-crop-picker';
+// import ImagePicker from 'react-native-image-crop-picker';
 
 import * as Colors from '../utils/Colors';
 import STYLES from '../utils/Styles';
@@ -29,7 +29,9 @@ class Home extends React.Component {
       .then(Data => {
         // console.log(Data);
         this.setState({loading: false});
-        if (Data) this.props.setDetails(JSON.parse(Data));
+        if (Data) {
+          this.props.setDetails(JSON.parse(Data));
+        }
       })
       .catch(error => {
         this.setState({loading: false});
@@ -39,7 +41,9 @@ class Home extends React.Component {
       .then(Profile => {
         // console.log(Data);
         this.setState({loading: false});
-        if (Profile) this.props.SetImage(JSON.parse(Profile));
+        if (Profile) {
+          this.props.SetImage(JSON.parse(Profile));
+        }
       })
       .catch(error => {
         this.setState({loading: false});

@@ -6,18 +6,12 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {connect} from 'react-redux';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
 import * as Colors from '../utils/Colors';
 import STYLES from '../utils/Styles';
 import {responsiveHeight, responsiveWidth} from '../utils/Responsive';
 import MessengerHeader from '../components/MessengerHeader';
 import Chats from './Chats';
 import Rooms from './Rooms';
-
-const Icon = MaterialCommunityIcons;
-
 class Messenger extends React.Component {
   state = {
     showChats: true,

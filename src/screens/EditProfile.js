@@ -10,8 +10,6 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux';
 
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
 import * as Colors from '../utils/Colors';
 import STYLES from '../utils/Styles';
 
@@ -20,8 +18,6 @@ import Header from '../components/Header';
 
 import {editProfile, showProfileSelector} from '../store/actions';
 import ProfileImage from '../components/accountComponents/ProfileImage';
-
-const Icon = MaterialCommunityIcons;
 
 class EditProfile extends React.Component {
   render() {

@@ -1,34 +1,20 @@
 import React from 'react';
-import {
-  Image,
-  Pressable,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableHighlight,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {SafeAreaView, StyleSheet, Text, TextInput, View} from 'react-native';
 import {connect} from 'react-redux';
 
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
 import * as Colors from '../utils/Colors';
-import STYLES from '../utils/Styles';
 
 import {responsiveHeight, responsiveWidth} from '../utils/Responsive';
 import Header from '../components/Header';
-
-const Icon = MaterialCommunityIcons;
 
 class EditDetails extends React.Component {
   state = {
     text: '',
   };
   componentDidMount() {
-    if (this.props.array[this.props.val].details)
+    if (this.props.array[this.props.val].details) {
       this.setState({text: this.props.array[this.props.val].details});
+    }
   }
   render() {
     const {val, navigation, heading} = this.props;

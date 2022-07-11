@@ -1,19 +1,9 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-
+import {SafeAreaView, Text, TouchableOpacity} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
 import * as Colors from '../utils/Colors';
 import STYLES from '../utils/Styles';
-
-import {responsiveHeight, responsiveWidth} from '../utils/Responsive';
+import {responsiveHeight} from '../utils/Responsive';
 
 const Icon = MaterialCommunityIcons;
 
@@ -30,5 +20,3 @@ export default Search = ({navigation}) => {
     </SafeAreaView>
   );
 };
-
-const styles = StyleSheet.create({});

@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   Image,
@@ -7,27 +8,34 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
 import * as Colors from '../utils/Colors';
-import STYLES from '../utils/Styles';
+import STYLES from './styles';
 import {responsiveHeight, responsiveWidth} from '../utils/Responsive';
-
-const Icon = MaterialCommunityIcons;
 
 class MainPage extends React.Component {
   render() {
     const {navigation} = this.props;
     return (
-      <SafeAreaView style={[STYLES.main, {justifyContent: 'space-between'}]}>
-        <Image
-          style={[styles.image]}
-          source={require('../assets/images/instagram.png')}
-        />
+      <SafeAreaView style={[STYLES.main]}>
+        <View
+          style={{
+            height: responsiveHeight(65),
+          }}>
+          <Image
+            style={[
+              STYLES.image,
+              {
+                marginTop: responsiveHeight(28),
+                marginBottom: responsiveHeight(15),
+              },
+            ]}
+            source={require('../assets/images/instagram.png')}
+          />
 
-        <TouchableOpacity style={[styles.button]} activeOpacity={0.6}>
-          <Text style={[styles.buttonText]}>Log in with Facebook</Text>
-        </TouchableOpacity>
+          <TouchableOpacity style={STYLES.button} activeOpacity={0.6}>
+            <Text style={[styles.buttonText]}>Log in with Facebook</Text>
+          </TouchableOpacity>
+        </View>
 
         <View style={[styles.lineBox]}>
           <View style={[styles.line]} />
@@ -37,6 +45,7 @@ class MainPage extends React.Component {
 
         <TouchableOpacity
           activeOpacity={0.6}
+          style={{height: responsiveHeight(20)}}
           onPress={() => navigation.navigate('SignIn')}>
           <Text style={[styles.signInText]}>
             Sign up with email or phone number
@@ -44,7 +53,7 @@ class MainPage extends React.Component {
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={[styles.bottom]}
+          style={STYLES.footer}
           activeOpacity={0.6}
           onPress={() => navigation.navigate('LogIn')}>
           <Text style={{color: Colors.grey_meduim_0}}>
@@ -60,13 +69,6 @@ class MainPage extends React.Component {
 export default MainPage;
 
 const styles = StyleSheet.create({
-  image: {
-    borderWidth: 10,
-    alignSelf: 'center',
-    height: responsiveHeight(11),
-    width: responsiveWidth(60),
-    marginTop: responsiveHeight(25),
-  },
   button: {
     width: responsiveWidth(95),
     height: responsiveHeight(8),
@@ -100,17 +102,7 @@ const styles = StyleSheet.create({
     fontSize: responsiveWidth(3.5),
     textAlign: 'center',
     padding: responsiveWidth(4),
-    marginTop: responsiveHeight(2),
-    marginBottom: responsiveHeight(8),
-  },
-  bottom: {
-    borderTopWidth: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: responsiveWidth(3),
-    borderColor: Colors.grey_light_0,
-    bottom: 0,
+    margin: responsiveHeight(2),
   },
   logInText: {
     color: 'navy',
